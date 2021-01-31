@@ -1,0 +1,16 @@
+name: Seichi915Elevator
+version: 1.0.0
+main: net.seichi915.seichi915elevator.Seichi915Elevator
+api-version: "1.13"
+load: POSTWORLD
+authors: [stouma915]
+description: "seichi915Network エレベータープラグイン"
+website: https://www.seichi915.net
+permissions:
+  seichi915elevator.*:
+    description: Grant all permissions of seichi915Elevator
+    children:
+      seichi915elevator.use: true
+  seichi915elevator.use:
+    description: Permission to use elevator
+    default: true
