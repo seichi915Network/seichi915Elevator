@@ -65,6 +65,7 @@ class PlayerToggleSneakListener extends Listener {
                 event.getPlayer.getLocation.getPitch
               ))
             event.getPlayer.setSneaking(false)
+            Seichi915Elevator.coolDownMap += event.getPlayer -> Configuration.getCoolDownTime
             return
           } else {
             event.getPlayer.sendActionBar("移動先がブロックで埋まっているため移動できません。")

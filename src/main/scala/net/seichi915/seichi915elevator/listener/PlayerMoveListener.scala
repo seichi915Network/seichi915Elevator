@@ -64,6 +64,7 @@ class PlayerMoveListener extends Listener {
                 event.getPlayer.getLocation.getYaw,
                 event.getPlayer.getLocation.getPitch
               ))
+            Seichi915Elevator.coolDownMap += event.getPlayer -> Configuration.getCoolDownTime
             return
           } else {
             event.getPlayer.sendActionBar("移動先がブロックで埋まっているため移動できません。")
