@@ -1,5 +1,7 @@
 package net.seichi915.seichi915elevator.listener
 
+import net.seichi915.seichi915elevator.Seichi915Elevator
+import net.seichi915.seichi915elevator.configuration.Configuration
 import net.seichi915.seichi915elevator.util.Implicits._
 import org.bukkit.{Location, Material}
 import org.bukkit.event.player.PlayerMoveEvent
@@ -48,6 +50,11 @@ class PlayerMoveListener extends Listener {
                 .getBlockAt(plate.getLocation.add(0, 1, 0))
                 .getType
                 .equals(Material.AIR)) {
+            if (Configuration.isCoolDownEnabled && Seichi915Elevator.coolDownMap
+                  .contains(event.getPlayer)) {
+              event.getPlayer.sendActionBar("クールダウン中です。")
+              return
+            }
             event.getPlayer.teleport(
               new Location(
                 event.getPlayer.getLocation.getWorld,
